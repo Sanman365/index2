@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la página</title>
+    <!-- Vinculación del archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cines Pa-To</h1>
+        <br>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#seccion1">Peliculas</a></li>
+                <li><a href="#seccion2">Series</a></li>
+                <li><a href="#seccion3">Recomendaciones</a></li>
+                <li><a href="#seccion3">...</a></li>
+
+            </ul>
+        </nav>
+        <nav class="alphabet-nav">
+          <ul class="alphabet-bar">
+              <!-- Letras del abecedario -->
+              <li><a href="#A">A</a></li>
+              <li><a href="#B">B</a></li>
+              <li><a href="#C">C</a></li>
+              <li><a href="#D">D</a></li>
+              <li><a href="#E">E</a></li>
+              <li><a href="#F">F</a></li>
+              <li><a href="#G">G</a></li>
+              <li><a href="#H">H</a></li>
+              <li><a href="#I">I</a></li>
+              <li><a href="#J">J</a></li>
+              <li><a href="#K">K</a></li>
+              <li><a href="#L">L</a></li>
+              <li><a href="#M">M</a></li>
+              <li><a href="#N">N</a></li>
+              <li><a href="#O">O</a></li>
+              <li><a href="#P">P</a></li>
+              <li><a href="#Q">Q</a></li>
+              <li><a href="#R">R</a></li>
+              <li><a href="#S">S</a></li>
+              <li><a href="#T">T</a></li>
+              <li><a href="#U">U</a></li>
+              <li><a href="#V">V</a></li>
+              <li><a href="#W">W</a></li>
+              <li><a href="#X">X</a></li>
+              <li><a href="#Y">Y</a></li>
+              <li><a href="#Z">Z</a></li>
+          </ul>
+      </nav>
+
+
+
+
+      <div class="carousel">
+        <div class="carousel-images">
+          <a href="pagina1.html" target="_blank"><img src="../ProyectoPeliculas/Imagenes-carrusel/3d-digital-art-abstract-simple-background-wallpaper-preview.jpg" alt="Foto 1"></a>
+          <a href="pagina2.html" target="_blank"><img src="../ProyectoPeliculas/Imagenes-carrusel/city-digital-light-design-wallpaper-preview.jpg" alt="Foto 2"></a>
+          <a href="pagina3.html" target="_blank"><img src="../ProyectoPeliculas/Imagenes-carrusel/oldboy-japanese-digital-art-artwork-wallpaper-preview.jpg" alt="Foto 3"></a>
+          <a href="pagina4.html" target="_blank"><img src="../ProyectoPeliculas/Imagenes-carrusel/rick-and-morty-tv-rick-sanchez-morty-smith-wallpaper-preview.jpg" alt="Foto 4"></a>
+          <a href="pagina5.html" target="_blank"><img src="../ProyectoPeliculas/Imagenes-carrusel/tron-legacy-movies-wallpaper-preview.jpg" alt="Foto 5"></a>
+        </div>
+        
+    </div>
+<br><br><br><br>
+
+<!-- Cinco imágenes con texto en la primera fila -->
+
+
+
+
+<div id="paginador" ></div>
+
+
+</head>
+<body>
+    <div class="pagination-container">
+        <ul class="pagination">
+            <li><a id="prev" href="#" onclick="changePage('prev')">&laquo; Prev</a></li>
+            <li><a id="page1" class="inactive">1</a></li>
+            <li><a id="page2" class="inactive">2</a></li>
+            <li><a id="page3" class="inactive">3</a></li>
+            <li><a id="page4" class="inactive">4</a></li>
+            <li><a id="page5" class="inactive">5</a></li>
+            <li><a id="next" href="#" onclick="changePage('next')">Next &raquo;</a></li>
+        </ul>
+    </div>
+    
+<script>
+
+let currentPage = 3;  // Establece la página inicial en 1
+const maxPages = 20;  // Puedes ajustar esto según tus necesidades
+
+function updatePagination() {
+    document.querySelectorAll('.pagination a').forEach((a, index) => {
+        if (index > 0 && index < 6) { // Actualiza solo los enlaces visibles (5 números de página y 2 flechas)
+            let page = currentPage - 3 + index;
+            if (page > 0 && page <= maxPages) {
+                a.textContent = page;
+                a.style.display = "inline-block";
+                a.classList.toggle('active', page === currentPage);
+                a.classList.remove('inactive');
+                a.href = page + '3.html';  // Actualiza el href para redirigir a la página correspondiente
+            } else {
+                a.style.display = "none";
+                a.classList.add('inactive');
+            }
+        }
+    });
+    document.getElementById('prev').classList.toggle('disabled', currentPage <= 1);
+    document.getElementById('next').classList.toggle('disabled', currentPage >= maxPages);
+}
+
+function changePage(direction) {
+    if (direction === 'prev' && currentPage > 1) {
+        currentPage--;
+    } else if (direction === 'next' && currentPage < maxPages) {
+        currentPage++;
+    }
+    window.location.href = currentPage + '.html'  ;  // Redirige a la página correspondiente
+}
+
+updatePagination();
+
+
+
+
+
+</script>
+
+    </header>
+    
+    <footer>
+        <p>Derechos reservados © 2024</p>
+    </footer>
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,571 @@
+/* Archivo: style.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+
+/* Estilos generales */
+body {
+  background-color: black;
+  color: white;
+
+
+}
+
+/* Estilos para el encabezado */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos para el h1 */
+header h1 {
+  
+  font-size: 2.5em;
+  margin: 0;
+}
+
+/* Estilos para la barra de navegación */
+.titulo{
+  font-family: tron;
+
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Color de fondo de la barra */
+  height: 120px; /* Altura de la barra */
+  padding: 0; /* Sin espaciado horizontal */
+  position: relative;
+  width: 100%;
+  top: 10%;
+  left: 0;
+  z-index: 9999;
+}
+
+.navbar-item {
+  position: relative;
+  width: 33.33%; /* Cada imagen ocupa un tercio del ancho de la barra */
+  height: 100%;
+  overflow: hidden; /* Asegura que las imágenes no se desborden */
+}
+
+.navbar-item img {
+  height: 100%; /* Asegura que las imágenes abarquen toda la altura de la barra */
+  width: 100%; /* Asegura que las imágenes abarquen todo el ancho de su contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  transition: all 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+.navbar-item h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: white;
+  font-size: 38px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease; /* Transición suave para el efecto de hover */
+}
+
+/* Efecto de hover para la imagen y el texto */
+.navbar-item:hover img {
+  filter: brightness(0.5); /* Oscurece la imagen al hacer hover */
+}
+
+.navbar-item:hover h2 {
+  color: rgb(221, 150, 84); /* Cambia el color del texto al hacer hover */
+}
+
+/* Estilos para los enlaces */
+.navbar-item a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+
+
+.alphabet-nav {
+  background-color: #000000;
+  width: 100%;
+  margin-top: 10px; /* Agrega margen superior para separación */
+  padding: 10px 0;
+ 
+}
+
+.alphabet-bar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que las letras se envuelvan en varias líneas si es necesario */
+ 
+
+}
+
+.alphabet-bar li {
+  margin: 15px;
+}
+
+.alphabet-bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.4em;
+  display: block;
+  width: 38px; /* Ancho del cuadrado */
+  height: 40px; /* Altura del cuadrado */
+  line-height: 40px; /* Alinea verticalmente el texto */
+  text-align: center; /* Centra el texto horizontalmente */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #555;
+}
+
+/* Colores de hover diferentes para cada letra */
+.alphabet-bar a:hover {
+  background-color: rgb(221, 150, 84);  color: #000000;
+}
+
+
+
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+  justify-content: space-between;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.image-item {
+  width: 18%; /* Ajusta el ancho del contenedor de la imagen y el texto */
+  margin-bottom: 20px; /* Espacio debajo de cada imagen y texto */
+  position: relative; /* Necesario para posicionar la superposición */
+}
+
+.image-item a {
+  display: block;
+  overflow: hidden;
+  border-radius: 15px; /* Bordes redondeados */
+  transition: transform 0.3s ease;
+}
+
+.image-item img {
+  width: 100%;
+  height: 405px; /* Ajusta la altura de las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsión */
+  border-radius: 15px; /* Bordes redondeados */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-item a:hover img {
+  transform: scale(1.05); /* Agranda la imagen ligeramente al pasar el cursor */
+}
+
+.image-item p {
+  text-align: center; /* Centra el texto debajo de la imagen */
+  margin: 10px 0 0; /* Margen superior para separar el texto de la imagen */
+  color: #fff; /* Color del texto (puedes cambiarlo si es necesario) */
+}
+
+.overlay {
+  position: absolute;
+  top: 10px; /* Ajusta la distancia desde el borde superior */
+  left: 10px; /* Ajusta la distancia desde el borde izquierdo */
+  width: 60px; /* Ajusta el tamaño del cuadrado */
+  height: 60px; /* Ajusta el tamaño del cuadrado */
+  background: rgba(0, 0, 0, 0.5); /* Color y opacidad de la superposición */
+  border-radius: 15px; /* Bordes redondeados */
+  display: flex;
+  align-items: center; /* Centra el texto verticalmente */
+  justify-content: center; /* Centra el texto horizontalmente */
+  color: #919191; /* Color del texto dentro del cuadrado */
+  font-size: 22px; /* Tamaño de la fuente */
+  text-align: center; /* Centra el texto dentro del cuadrado */
+}
+
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination a {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 11.5px 17.25px; /* Aumentado en un 15% */
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 5.75px; /* Aumentado en un 15% */
+  text-decoration: none;
+  color: rgb(221, 150, 84);
+  font-size: 1.15em; /* Aumentado en un 15% */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: rgb(221, 150, 84);
+  color: white;
+}
+
+.pagination a.active {
+  background-color: #007bff; /* Color activo azul */
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination a.inactive {
+  cursor: default;
+  color: #ddd;
+  pointer-events: none;
+}
+
+.pagination a.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+
+.rainbow-border {
+  position: fixed;
+  background: linear-gradient(
+      90deg,
+      red, orange, yellow, green, blue, indigo, violet,
+      red, orange, yellow, green, blue, indigo, violet
+ ); /* Gradiente duplicado */
+  background-size: 200% 200%; /* Ajustado para abarcar el gradiente más largo */
+  animation: rainbow-animation 10s linear infinite;
+  z-index: 9999;
+}
+
+.rainbow-border.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 9.25px; /* Reducido un 25% de 15px */
+}
+
+.rainbow-border.bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 11.25px; /* Reducido un 25% de 15px */
+}
+
+.rainbow-border.left {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 11.25px; /* Reducido un 25% de 15px */
+  background: linear-gradient(
+      0deg,
+      red, orange, yellow, green, blue, indigo, violet,
+      red, orange, yellow, green, blue, indigo, violet
+  ); /* Gradiente duplicado para los bordes laterales */
+  background-size: 200% 200%;
+}
+
+.rainbow-border.right {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 11.25px; /* Reducido un 25% de 15px */
+  background: linear-gradient(
+      0deg,
+      red, orange, yellow, green, blue, indigo, violet,
+      red, orange, yellow, green, blue, indigo, violet
+  ); /* Gradiente duplicado para los bordes laterales */
+  background-size: 200% 200%;
+}
+
+/* Animación del arcoíris */
+@keyframes rainbow-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Alien */
+.alien-container {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.alien-text {
+    font-size: 36px; /* Ajustado a 75% de 48px */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    color: #00ff66; /* Color verde característico de Alien */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Ajustado proporcionalmente */
+    transition: all 0.3s ease;
+    border: 1.5px solid transparent;
+    padding: 7.5px 15px; /* Ajustado a 75% */
+    border-radius: 3.75px;
+}
+
+.alien-text::before {
+    content: '';
+    position: absolute;
+    top: -3.75px;
+    left: -3.75px;
+    right: -3.75px;
+    bottom: -3.75px;
+    background: none;
+    border: 1.5px solid #00ff66;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.alien-text:hover {
+    color: #00ff66;
+    text-shadow: 0 0 11.25px #00ff66, 0 0 22.5px #00ff66, 0 0 33.75px #00ff66;
+    border-color: #00ff66;
+}
+
+.alien-text:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 11.25px #00ff66, 0 0 22.5px #00ff66, 0 0 33.75px #00ff66;
+}
+
+/* American Beauty */
+.american-beauty-container {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.american-beauty-text {
+    font-size: 36px; /* Ajustado a 75% de 48px */
+    font-family: 'Georgia', serif;
+    color: #C21807; /* Rojo profundo, característico de American Beauty */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border: 1.5px solid transparent;
+    padding: 7.5px 15px;
+    border-radius: 3.75px;
+}
+
+.american-beauty-text::before {
+    content: '';
+    position: absolute;
+    top: -3.75px;
+    left: -3.75px;
+    right: -3.75px;
+    bottom: -3.75px;
+    background: none;
+    border: 1.5px solid #C21807;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.american-beauty-text:hover {
+    color: #C21807;
+    text-shadow: 0 0 11.25px #C21807, 0 0 22.5px #C21807, 0 0 33.75px #C21807;
+    border-color: #C21807;
+}
+
+.american-beauty-text:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 11.25px #C21807, 0 0 22.5px #C21807, 0 0 33.75px #C21807;
+}
+
+/* Avatar */
+.avatar-container {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.avatar-text {
+    font-size: 36px;
+    font-family: 'Papyrus', cursive;
+    color: #0054A6; /* Azul característico de Avatar */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border: 1.5px solid transparent;
+    padding: 7.5px 15px;
+    border-radius: 3.75px;
+}
+
+.avatar-text::before {
+    content: '';
+    position: absolute;
+    top: -3.75px;
+    left: -3.75px;
+    right: -3.75px;
+    bottom: -3.75px;
+    background: none;
+    border: 1.5px solid #0054A6;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.avatar-text:hover {
+    color: #0054A6;
+    text-shadow: 0 0 11.25px #0054A6, 0 0 22.5px #0054A6, 0 0 33.75px #0054A6;
+    border-color: #0054A6;
+}
+
+.avatar-text:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 11.25px #0054A6, 0 0 22.5px #0054A6, 0 0 33.75px #0054A6;
+}
+
+/* Back to the Future */
+.back-to-the-future-container {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.back-to-the-future-text {
+    font-size: 36px;
+    font-family: 'Future', sans-serif;
+    color: #FF6C00; /* Naranja intenso característico */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border: 1.5px solid transparent;
+    padding: 7.5px 15px;
+    border-radius: 3.75px;
+}
+
+.back-to-the-future-text::before {
+    content: '';
+    position: absolute;
+    top: -3.75px;
+    left: -3.75px;
+    right: -3.75px;
+    bottom: -3.75px;
+    background: none;
+    border: 1.5px solid #FF6C00;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.back-to-the-future-text:hover {
+    color: #FF6C00;
+    text-shadow: 0 0 11.25px #FF6C00, 0 0 22.5px #FF6C00, 0 0 33.75px #FF6C00;
+    border-color: #FF6C00;
+}
+
+.back-to-the-future-text:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 11.25px #FF6C00, 0 0 22.5px #FF6C00, 0 0 33.75px #FF6C00;
+}
+
+/* Braveheart */
+.braveheart-container {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.braveheart-text {
+    font-size: 36px;
+    color: #003366; /* Azul oscuro característico */
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    border: 1.5px solid transparent;
+    padding: 7.5px 15px;
+    border-radius: 3.75px;
+}
+
+.braveheart-text::before {
+    content: '';
+    position: absolute;
+    top: -3.75px;
+    left: -3.75px;
+    right: -3.75px;
+    bottom: -3.75px;
+    background: none;
+    border: 1.5px solid #003366;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.braveheart-text:hover {
+    color: #003366;
+    text-shadow: 0 0 11.25px #003366, 0 0 22.5px #003366, 0 0 33.75px #003366;
+    border-color: #003366;
+}
+
+.braveheart-text:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 11.25px #003366, 0 0 22.5px #003366, 0 0 33.75px #003366;
+}
+
+
+.footer {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #444444;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  position: relative;
+}
